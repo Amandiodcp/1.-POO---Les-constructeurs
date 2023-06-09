@@ -1,0 +1,47 @@
+using System;
+
+public class Batiment
+{
+    private int numberEtage;
+    private double height;
+
+    public Batiment(int numberEtage, double height)
+    {
+        this.numberEtage = numberEtage;
+        this.height = height;
+    }
+
+    public Batiment(int numberEtage)
+    {
+        this.numberEtage = numberEtage;
+        this.height = numberEtage * 3;
+    }
+
+    public double GetFloorMaxSize()
+    {
+        return height / numberEtage;
+    }
+
+    public int GetFloorCount()
+    {
+        return numberEtage;
+    }
+
+    public double GetSize()
+    {
+        return height;
+    }
+
+    public static void Main(string[] args)
+    {
+        Batiment Batiment1 = new Batiment(10, 30);
+        Console.WriteLine("Batiment 1 - Etage Max Size: " + Batiment1.GetFloorMaxSize());
+        Console.WriteLine("Batiment 1 - Etage Count: " + Batiment1.GetFloorCount());
+        Console.WriteLine("Batiment 1 - Size: " + Batiment1.GetSize());
+
+        Batiment batiment2 = new Batiment(15);
+        Console.WriteLine("Batiment 2 - Etage Max Size: " + batiment2.GetFloorMaxSize());
+        Console.WriteLine("Batiment 2 - Etage Count: " + batiment2.GetFloorCount());
+        Console.WriteLine("Batiment 2 - Size: " + batiment2.GetSize());
+    }
+}
